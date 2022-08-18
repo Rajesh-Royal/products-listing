@@ -8,6 +8,7 @@ const CatalogDetailPage = () => {
     const urlParams = useParams();
     const [catalogData, setCatalogData] = useState<ICatalog>()
     const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         if (urlParams.productId) {
             getCatalogDetail(urlParams.productId).then((response) => {
@@ -18,6 +19,7 @@ const CatalogDetailPage = () => {
             })
         }
     }, [urlParams.productId])
+
     return (
         loading ?
             <p>Loading............</p> :
