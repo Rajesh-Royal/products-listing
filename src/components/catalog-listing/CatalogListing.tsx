@@ -19,6 +19,7 @@ const CatalogListing = () => {
     }, [])
     return (
         <div className="catalog-listing">
+            <h2>Catalog Listing</h2>
             {loading ?
                 <p>Loading........</p> :
                 <ul className="catalog">
