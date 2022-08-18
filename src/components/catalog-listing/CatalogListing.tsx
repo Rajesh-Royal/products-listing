@@ -1,14 +1,21 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CatalogDB from "../../db/products.json";
+import { getCatalogLists, ICatalog } from "../../api/services/GetCatalogLists";
 import "./CatalogListing.scss";
 
 const CatalogListing = () => {
     const navigate = useNavigate();
+    const [catalogList, setCatalogList] = useState<ICatalog[] | []>([]);
+    useEffect(() => {
+        getCatalogLists().then((response) => {
+            setCatalogList(response.data);
+        })
+    }, [])
     return (
         <div className="catalog-listing">
             <ul className="catalog">
                 {
-                    CatalogDB.map((product) => {
+                    catalogList.map((product) => {
                         return <li className="catalog-item" key={product.Id}>
                             <div className="product">
                                 <img src={product.img} alt="product-thumbnail" className="thumbnail" />
