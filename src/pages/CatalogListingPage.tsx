@@ -1,8 +1,12 @@
 import CatalogListing from '../components/catalog-listing/CatalogListing'
+import AddPageTitle from '../components/Shared/AddPageTitle'
 
 const CatalogListingPage = () => {
     return (
-        <CatalogListing />
+        <>
+            <AddPageTitle title='Catalog Listing' />
+            <CatalogListing />
+        </>
     )
 }
 

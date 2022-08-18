@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Catalog } from '../../api/models/Catalog.model';
 import { getCatalogDetail } from '../../api/services/GetCatalogDetail';
+import AddPageTitle from '../Shared/AddPageTitle';
 import "./CatalogDetail.scss";
 
 const CatalogDetail = ({ catalogId }: { catalogId: string }) => {
@@ -23,6 +24,7 @@ const CatalogDetail = ({ catalogId }: { catalogId: string }) => {
         loading ?
             <p>Loading............</p> :
             <div className="catalog-details">
+                <AddPageTitle title={catalogData?.Title || ""} />
                 {catalogData ?
                     <>
                         <h2 className="title">{catalogData?.Title}</h2>
