@@ -1,7 +1,7 @@
-import { ICatalog } from '../../api/services/GetCatalogLists';
+import { Catalog } from '../../api/models/Catalog.model';
 import "./CatalogDetail.scss";
 
-const CatalogDetail = ({ catalogData }: { catalogData: ICatalog | undefined }) => {
+const CatalogDetail = ({ catalogData }: { catalogData: Catalog | undefined }) => {
     return (
         <div className="catalog-details">
             {catalogData ?

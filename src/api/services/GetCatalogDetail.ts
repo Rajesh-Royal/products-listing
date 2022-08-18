@@ -1,5 +1,5 @@
 import CatalogDB from "../../db/products.json";
-import { ICatalog } from "./GetCatalogLists";
+import { Catalog } from "../models/Catalog.model";
 
 export const getCatalogDetail = (catlogId: string): Promise<ICatalogDetailAPIResponse> => {
     return new Promise((resolve, reject) => {
@@ -23,5 +23,5 @@ export const getCatalogDetail = (catlogId: string): Promise<ICatalogDetailAPIRes
 export interface ICatalogDetailAPIResponse {
     message: string;
     status: number;
-    data: ICatalog
+    data: Catalog
 }

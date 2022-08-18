@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Catalog } from "../api/models/Catalog.model";
 import { getCatalogDetail } from "../api/services/GetCatalogDetail";
-import { ICatalog } from "../api/services/GetCatalogLists";
 import CatalogDetail from "../components/catalog-detail/CatalogDetail";
 
 const CatalogDetailPage = () => {
     const urlParams = useParams();
-    const [catalogData, setCatalogData] = useState<ICatalog>()
+    const [catalogData, setCatalogData] = useState<Catalog>()
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {

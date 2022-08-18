@@ -1,4 +1,5 @@
 import CatalogDB from "../../db/products.json";
+import { Catalog } from "../models/Catalog.model";
 
 export const getCatalogLists = (): Promise<ICatalogListAPIResponse> => {
     return new Promise((resolve, reject) => {
@@ -10,18 +11,8 @@ export const getCatalogLists = (): Promise<ICatalogListAPIResponse> => {
     })
 }
 
-export interface ICatalog {
-    Id: string;
-    Maker: string;
-    img: string; Url:
-    string; Title:
-    string;
-    Description: string;
-    Ratings: number[] | null
-}
-
 export interface ICatalogListAPIResponse {
     message: string;
     status: number;
-    data: ICatalog[]
+    data: Catalog[]
 }

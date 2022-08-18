@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCatalogLists, ICatalog } from "../../api/services/GetCatalogLists";
+import { Catalog } from "../../api/models/Catalog.model";
+import { getCatalogLists } from "../../api/services/GetCatalogLists";
 import "./CatalogListing.scss";
 
 const CatalogListing = () => {
     const navigate = useNavigate();
-    const [catalogList, setCatalogList] = useState<ICatalog[] | []>([]);
+    const [catalogList, setCatalogList] = useState<Catalog[] | []>([]);
     useEffect(() => {
         getCatalogLists().then((response) => {
             setCatalogList(response.data);
