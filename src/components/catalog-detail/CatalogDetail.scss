@@ -1,0 +1,28 @@
+.catalog-details {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .preview-img {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .buy-btn {
+        background: rgb(101, 101, 229);
+        text-align: center;
+        margin: 20px 0px;
+        padding: 20px;
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            background: rgb(90, 90, 230);
+        }
+    }
+}
