@@ -11,7 +11,7 @@ const CatalogListing = () => {
                             <div className="product">
                                 <img src={product.img} alt="product-thumbnail" className="thumbnail" />
                                 <div className="details">
-                                    <p className='title'>{product.Title}</p>
+                                    <h3 className='title'>{product.Title}</h3>
                                     <p className='maker'>{product.Maker}</p>
                                 </div>
                                 <button>View</button>

@@ -1,0 +1,30 @@
+.catalog-listing {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+
+    .catalog {
+        .catalog-item {
+            list-style: none;
+            border: 1px solid gray;
+            margin: 15px 0px;
+            .product {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+                .thumbnail {
+                    width: 30%;
+                }
+                .details {
+                    width: 50%;
+                }
+                button {
+                    align-self: center;
+                    max-width: 100px;
+                    margin: auto;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
