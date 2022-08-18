@@ -1,4 +1,4 @@
-import CatalogListing from "./components/CatalogListing";
+import CatalogListing from "./components/catalog-listing/CatalogListing";
 
 function App() {
 

@@ -1,4 +1,5 @@
-import CatalogDB from "../db/products.json";
+import CatalogDB from "../../db/products.json";
+import "./CatalogListing.scss";
 
 const CatalogListing = () => {
     return (
