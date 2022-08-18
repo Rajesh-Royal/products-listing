@@ -9,6 +9,7 @@ const CatalogDetail = ({ catalogId }: { catalogId: string }) => {
 
     useEffect(() => {
         if (catalogId) {
+            setLoading(true);
             getCatalogDetail(catalogId).then((response) => {
                 setLoading(false);
                 setCatalogData(response.data);
