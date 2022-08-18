@@ -1,9 +1,10 @@
+import CatalogListing from "./components/CatalogListing";
 
 function App() {
 
   return (
     <div className="App">
-      Hello
+      <CatalogListing />
     </div>
   );
 }
