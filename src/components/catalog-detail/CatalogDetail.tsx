@@ -11,7 +11,7 @@ const CatalogDetail = ({ catalogData }: { catalogData: ICatalog | undefined }) =
                     <p className="description">{catalogData?.Description}</p>
                     {catalogData?.img ? <img src={catalogData.img} alt="catalog preview" className="preview-img" /> : null}
                     <a href={catalogData?.Url} target="_blank" rel="noreferrer" className="buy-btn">Buy</a></>
-                : <p>Catalog Not Found.</p>}
+                : <p className='text-center'>Catalog Not Found.</p>}
         </div>
     )
 }
