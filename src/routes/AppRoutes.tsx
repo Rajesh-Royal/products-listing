@@ -1,7 +1,8 @@
 import {
     BrowserRouter, Navigate, Route, Routes
 } from "react-router-dom";
-import CatalogListing from "../components/catalog-listing/CatalogListing";
+import CatalogDetailPage from "../pages/CatalogDetailPage";
+import CatalogListingPage from "../pages/CatalogListingPage";
 
 const AppRoutes = () => {
     const NavigateToHome = <Navigate to={"/"} />
@@ -9,9 +10,9 @@ const AppRoutes = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" >
-                    <Route index element={<CatalogListing />} />
+                    <Route index element={<CatalogListingPage />} />
                     <Route path="product">
-                        <Route path=":productId" element={<h2 >product details</h2>} />
+                        <Route path=":productId" element={<CatalogDetailPage />} />
                         <Route index element={NavigateToHome} />
                     </Route>
                     <Route path="*" element={<h2>page not found</h2>} />
