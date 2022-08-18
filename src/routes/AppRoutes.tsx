@@ -12,7 +12,7 @@ const AppRoutes = () => {
                 <Route path="/" >
                     <Route index element={<CatalogListingPage />} />
                     <Route path="product">
-                        <Route path=":productId" element={<CatalogDetailPage />} />
+                        <Route path=":catalogId" element={<CatalogDetailPage />} />
                         <Route index element={NavigateToHome} />
                     </Route>
                     <Route path="*" element={<h2>page not found</h2>} />
