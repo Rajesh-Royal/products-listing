@@ -1,5 +1,6 @@
 const express = require('express');
 const createCatalogs = require("../services/create-catalogs.service")
+const { getAllCatalogs, getCatalogById } = require("../services/get-catalogs.service");
 
 const router = express.Router()
 
@@ -10,13 +11,15 @@ router.post('/createCatalogs', async (req, res, next) => {
 })
 
 //Get all catalogs
-router.get('/catalogs', (req, res, next) => {
-    res.send('Get All API')
+router.get('/catalogs', async (req, res, next) => {
+    const results = await getAllCatalogs(req, res, next);
+    res.status(200).json({ data: results, message: "Get catalogs list successfully", status: 200 });
 })
 
 // get single catalog
-router.get('/catalogs/:catalogId', (req, res) => {
-    res.send(req.params.catalogId)
+router.get('/catalogs/:catalogId', async (req, res) => {
+    const results = await getCatalogById(req, res, next);
+    res.status(200).json({ data: results, message: "Get catalogs list successfully", status: 200 });
 })
 
 
