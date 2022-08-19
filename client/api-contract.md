@@ -5,7 +5,7 @@
   Id: number
   Maker: string
   img: string
-  URL: string
+  Url: string
   Title: string
   Description: string
   Ratings: number[] | null

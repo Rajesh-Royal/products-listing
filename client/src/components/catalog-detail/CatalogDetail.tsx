@@ -31,7 +31,8 @@ const CatalogDetail = ({ catalogId }: { catalogId: string }) => {
                         <p className="maker">{catalogData?.Maker}</p>
                         <p className="description">{catalogData?.Description}</p>
                         {catalogData?.img ? <img src={catalogData.img} alt="catalog preview" className="preview-img" /> : null}
-                        <a href={catalogData?.Url} target="_blank" rel="noreferrer" className="buy-btn">Buy</a></>
+                        {catalogData?.Url ? <a href={catalogData?.Url} target="_blank" rel="noreferrer" className="buy-btn">Buy</a> : null}
+                    </>
                     : <p className='text-center'>Catalog Not Found.</p>}
             </div>
     )

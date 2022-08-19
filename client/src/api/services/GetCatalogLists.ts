@@ -1,14 +1,10 @@
-import CatalogDB from "../../db/products.json";
+import { apiEndpoints } from "../ApiEndpoints";
+import HTTPService from "../HttpService";
 import { Catalog } from "../models/Catalog.model";
 
 export const getCatalogLists = (): Promise<ICatalogListAPIResponse> => {
-    return new Promise((resolve, reject) => {
-        resolve({
-            message: "Catalog List fetched Successfully",
-            data: CatalogDB,
-            status: 200
-        })
-    })
+    console.log(process.env)
+    return HTTPService.get(apiEndpoints.catalogs);
 }
 
 export interface ICatalogListAPIResponse {
