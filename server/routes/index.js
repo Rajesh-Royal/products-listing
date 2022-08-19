@@ -17,7 +17,7 @@ router.get('/catalogs', async (req, res, next) => {
 })
 
 // get single catalog
-router.get('/catalogs/:catalogId', async (req, res) => {
+router.get('/catalogs/:catalogId', async (req, res, next) => {
     const results = await getCatalogById(req, res, next);
     res.status(200).json({ data: results, message: "Get catalogs list successfully", status: 200 });
 })

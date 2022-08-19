@@ -12,11 +12,11 @@ const createCatalogs = async (req, res, next) => {
         await Promise.all(dataToSave).then((res) => {
             results = res;
         }).catch((error) => {
-            res.status(400).json({ message: error.message })
+            res.status(400).json({ message: error.message, status: 500, data: [] });
         })
     }
     catch (error) {
-        res.status(400).json({ message: error.message })
+        res.status(400).json({ message: error.message, status: 500, data: [] });
     }
 
     return results;
