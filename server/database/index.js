@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const createCatalogs = require("../services/create-catalogs.service");
 require('dotenv').config();
 
 const connectToMongoDB = () => {
@@ -12,6 +13,12 @@ const connectToMongoDB = () => {
 
     database.once('connected', () => {
         console.log('Database Connected');
+        // create dummy db
+        createCatalogs().then((res) => {
+            console.log("Catalog databases created successfully");
+        }).catch((err) => {
+            console.error("failed to create catalogs db", err);
+        })
     })
 
     database.on('error', (error) => {
