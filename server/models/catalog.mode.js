@@ -13,7 +13,7 @@ const dataSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-    URL: {
+    Url: {
         required: false,
         type: String
     },
