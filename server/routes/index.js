@@ -1,14 +1,16 @@
 const express = require('express');
+const createCatalogs = require("../services/create-catalogs.service")
 
 const router = express.Router()
 
 //Post Method
-router.post('/post', (req, res) => {
-    res.send('Post API')
+router.post('/createCatalogs', async (req, res, next) => {
+    const results = await createCatalogs(req, res, next);
+    res.status(200).json({ data: results, message: "Get catalogs list successfully", status: 200 });
 })
 
 //Get all catalogs
-router.get('/catalogs', (req, res) => {
+router.get('/catalogs', (req, res, next) => {
     res.send('Get All API')
 })
 
